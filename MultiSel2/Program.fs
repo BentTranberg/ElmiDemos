@@ -43,7 +43,7 @@ module App =
             { m with Lines = lines }
 
     let bindings () : Binding<Model, Msg> list = [
-        "Lines" |> Binding.subModelSeq((fun m -> m.Lines), (fun line -> line), fun () ->
+        "Lines" |> Binding.subModelSeq((fun m -> m.Lines), (fun line -> line.Id), fun () ->
             [
                 "Id" |> Binding.oneWay (fun (_, line) -> line.Id)
                 "Marked" |> Binding.twoWay (
