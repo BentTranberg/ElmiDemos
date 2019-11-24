@@ -7,6 +7,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MultiSel", "MultiSel\MultiS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiSel.Views", "MultiSel.Views\MultiSel.Views.csproj", "{075F0184-034F-4EB6-9DE9-A0F4391E65E7}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MultiSel2", "MultiSel2\MultiSel2.fsproj", "{B613D2B7-B093-46CC-8CD9-8F18D71E8C41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiSel2.Views", "MultiSel2.Views\MultiSel2.Views.csproj", "{4BD3C727-90B9-4EED-A25E-515A998AACFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{075F0184-034F-4EB6-9DE9-A0F4391E65E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{075F0184-034F-4EB6-9DE9-A0F4391E65E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{075F0184-034F-4EB6-9DE9-A0F4391E65E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B613D2B7-B093-46CC-8CD9-8F18D71E8C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B613D2B7-B093-46CC-8CD9-8F18D71E8C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B613D2B7-B093-46CC-8CD9-8F18D71E8C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B613D2B7-B093-46CC-8CD9-8F18D71E8C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD3C727-90B9-4EED-A25E-515A998AACFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD3C727-90B9-4EED-A25E-515A998AACFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD3C727-90B9-4EED-A25E-515A998AACFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD3C727-90B9-4EED-A25E-515A998AACFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
