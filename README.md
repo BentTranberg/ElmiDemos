@@ -1,7 +1,7 @@
 # ElmiDemos
 Collection of small samples for testing out solutions using Elmish.WPF
 
-The two projects currently in this solution are both attempts at using ListBox with SelectionMode="Extended" with Elmish.WPF.
+The three projects currently in this solution are both attempts at using ListBox with SelectionMode="Extended" with Elmish.WPF.
 
 MultiSel tries unsuccessfully to propagate ListBoxItem.IsSelected to a CheckBox.IsChecked in the item's template through a binding, and from there on to the model through a second binding. The two bindings work well when not combined, but in combination the binding
 to the model fails. This is actually expected according to docs. In any case, this demo is not much of interest any longer, because it has the smell of a hack. It tries to go through a component to connect ListBoxItem.IsSelected to the item model.
