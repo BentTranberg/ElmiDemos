@@ -15,8 +15,8 @@
         then on to the field "Marked" in our item model through a binding. These two steps
         each work perfectly on their own, but when combined then the binding to the model
         stops working.
-        If there is a way around this problem, then this might be a solution to multiselect
-        functionality in ListBox and several other controls.
+        Since this solution has the smell of a hack, it is not of interest to research why
+        it doesn't work.
         -->
         <ListBox ItemsSource="{Binding Lines}" SelectionMode="Extended">
             <ListBox.ItemTemplate>

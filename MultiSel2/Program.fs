@@ -46,10 +46,8 @@ module App =
         "Lines" |> Binding.subModelSeq((fun m -> m.Lines), (fun line -> line.Id), fun () ->
             [
                 "Id" |> Binding.oneWay (fun (_, line) -> line.Id)
-                "Marked" |> Binding.twoWay (
-                    (fun (m, line) -> line.Marked),
-                    (fun marked (m, line) -> SetMarked (line.Id, marked))
-                    )
+                "Marked" |> Binding.twoWay ((fun (m, line) -> line.Marked),
+                    (fun marked (m, line) -> SetMarked (line.Id, marked)))
                 "DisplayText" |> Binding.oneWay (fun (_, line) ->
                     line.DisplayText + (if line.Marked then " is checked" else " is not checked"))
             ])
