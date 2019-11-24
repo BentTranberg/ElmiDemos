@@ -18,8 +18,8 @@
                         <Label Content="{Binding Id}"/>
                         <CheckBox x:Name="cb" Content="{Binding DisplayText}" IsEnabled="False" Background="LightGreen">
                             <dxmvvm:Interaction.Behaviors>
-                                <dxmvvm:EventToCommand EventName="Checked" Command="{Binding Checked}" CommandParameter="{Binding Id}" UseDispatcher="True"/>
-                                <dxmvvm:EventToCommand EventName="Unchecked" Command="{Binding Unchecked}" CommandParameter="{Binding Id}" UseDispatcher="True"/>
+                                <dxmvvm:EventToCommand EventName="Checked" Command="{Binding Checked}" CommandParameter="{Binding Id}"/>
+                                <dxmvvm:EventToCommand EventName="Unchecked" Command="{Binding Unchecked}" CommandParameter="{Binding Id}"/>
                             </dxmvvm:Interaction.Behaviors>
                         </CheckBox>
                     </StackPanel>
