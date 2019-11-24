@@ -2,6 +2,34 @@
     x:Class="MultiSel.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Extended ListBox" Height="250" Width="300"
+    Title="Extended ListBox" Height="330" Width="400"
     WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock>
+            <Run>The idea is to click the list box items, and not the checkboxes,</Run>
+            <LineBreak/>
+            <Run>which are disabled anyway, and only the selected lines will then be checked.</Run>
+        </TextBlock>
+        <ListBox ItemsSource="{Binding Lines}" SelectionMode="Extended">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Id}"/>
+                        <CheckBox x:Name="cb" IsEnabled="False" IsChecked="{Binding Marked}" Background="LightGreen"/>
+                        <Label Content="{Binding DisplayText}" Background="LightBlue"/>
+                    </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,
+                                AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="True">
+                            <Setter TargetName="cb" Property="IsChecked" Value="True"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,
+                                AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="False">
+                            <Setter TargetName="cb" Property="IsChecked" Value="False"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
 </Window>

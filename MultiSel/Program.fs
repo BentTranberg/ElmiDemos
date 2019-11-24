@@ -6,25 +6,53 @@ open Elmish.WPF
 
 module App =
 
+    type Line =
+        {
+            Id: Guid
+            Marked: bool
+            DisplayText: string
+        }
+
     type Model =
         {
-            Dummy: string
+            Lines: Line list
         }
 
     let init () =
+        let line marked text = { Id = Guid.NewGuid(); Marked = marked; DisplayText = text }
         {
-            Dummy = ""
+            Lines = [
+                line false "Zero"
+                line true "One"
+                line true "Two"
+                line false "Three"
+                line true "Four"
+                line true "Five"
+                line false "Six"
+            ]
         }
 
     type Msg =
-        | Dummy
+        | SetMarked of Guid * bool
 
     let update msg m =
         match msg with
-        | Dummy -> m
+        | SetMarked (id, marked) ->
+            let lines = m.Lines |> List.map (fun line ->
+                if line.Id = id then { line with Marked = marked } else line)
+            { m with Lines = lines }
 
     let bindings () : Binding<Model, Msg> list = [
-        "Dummy" |> Binding.cmd Dummy
+        "Lines" |> Binding.subModelSeq((fun m -> m.Lines), (fun line -> line), fun () ->
+            [
+                "Id" |> Binding.oneWay (fun (_, line) -> line.Id)
+                "Marked" |> Binding.twoWay (
+                    (fun (m, line) -> line.Marked),
+                    (fun marked (m, line) -> SetMarked (line.Id, marked))
+                    )
+                "DisplayText" |> Binding.oneWay (fun (_, line) ->
+                    line.DisplayText + (if line.Marked then " is checked" else " is not checked"))
+            ])
     ]
 
 [<EntryPoint; STAThread>]
